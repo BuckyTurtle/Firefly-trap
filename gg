@@ -1,0 +1,59 @@
+ 
+// librerias
+#include <Servo.h>
+ 
+// variables
+
+const int led = 8;
+Servo servoMotor; 
+const int pir = 2;
+
+void setup() {
+
+  //Iniciamos el led para que trabaje con el pin 8
+  const int led = 8;
+  
+  // Iniciamos el monitor serie para mostrar el resultado
+  Serial.begin(9600);
+  
+  // Iniciamos el servo para que empiece a trabajar con el pin 9
+  servoMotor.attach(9);
+
+  pinMode(pir, INPUT);
+  
+}
+ 
+void loop() {
+
+ //led 
+   digitalWrite (led, HIGH);
+  delay(500);
+  digitalWrite (led, LOW);
+  delay(200);
+  digitalWrite (led, HIGH);
+  delay(1000);
+  digitalWrite (led, LOW);
+  delay(200);
+  digitalWrite (led, HIGH);
+  delay(500);
+
+
+  
+  // Servo
+  // Desplazamos a la posición 90º
+  servoMotor.write(90);
+  // Esperamos 1 segundo
+  delay(1000);
+  // Desplazamos a la posición 0º
+  servoMotor.write(0);
+  // Esperamos 1 segundo
+  delay(1000);
+
+
+  // Sensor pir
+  int value= digitalRead(pir);
+  if (value == )
+
+
+   
+}
